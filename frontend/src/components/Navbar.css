@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.85); /* Daha açık bir arka plan */
+    background: rgba(255, 255, 255, 0.9); /* Daha açık bir arka plan */
     backdrop-filter: blur(15px);
     padding: 20px 30px; /* Başlangıçta daha fazla padding */
     transition: background 0.5s ease, border-radius 0.5s ease, transform 0.5s ease, padding 0.5s ease, box-shadow 0.5s ease; /* Daha yumuşak geçişler */
@@ -38,7 +38,7 @@
         transform: translateY(0);
     }
     75% {
-        transform: translateY(4px); /* Daha az aşağı kaydırma */
+        transform: translateY(3px); /* Daha az aşağı kaydırma */
     }
     100% {
         transform: translateY(0);
@@ -46,7 +46,7 @@
 }
 
 .navbar h1 {
-    color: #333;
+    color: #007bff;
     display: inline;
     font-size: 1.5rem; /* Başlangıçta daha büyük */
     transition: font-size 0.5s ease, color 0.5s ease; /* Font boyutu ve renk geçişi */
@@ -54,35 +54,52 @@
 
 .navbar.scrolled h1 {
     font-size: 1.2rem; /* Kaydırıldığında daha küçük */
-    color: #007bff; /* Kaydırıldığında renk değişimi */
+    color: #0056b3; /* Kaydırıldığında renk değişimi */
 }
 
 .navbar ul {
     list-style-type: none;
     float: right;
+    display: flex; /* Esnek kutu */
+    gap: 20px; /* Elemanlar arası boşluk */
 }
 
 .navbar ul li {
     display: inline;
-    margin-left: 30px; /* Daha fazla boşluk */
 }
 
 .navbar ul li a {
     text-decoration: none;
-    color: #333;
+    color: #007bff;
     font-weight: bold;
     padding: 10px 15px; /* Daha fazla tıklanabilir alan */
     border-radius: 5px; /* Linkler için yuvarlak kenarlar */
-    transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease; /* Geçiş efektleri */
+    transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; /* Geçiş efektleri */
+    position: relative; /* Pozisyon ayarı */
 }
 
 .navbar ul li a:hover {
     background: rgba(0, 123, 255, 0.3); /* Hoverda arka plan rengi */
     color: #007bff; /* Hover efekti */
     transform: scale(1.05); /* Hoverda büyütme efekti */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5); /* Hoverda gölge efekti */
 }
 
 .navbar ul li a.active {
     background: rgba(0, 123, 255, 0.4); /* Aktif link için arka plan */
     color: #007bff; /* Aktif link rengi */
+}
+
+/* Procedural efekti artırmak için animasyonlar */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.navbar ul li a.active {
+    animation: pulse 1.5s infinite; /* Aktif link için sürekli pulse efekti */
 }

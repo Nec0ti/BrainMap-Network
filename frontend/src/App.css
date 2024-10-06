@@ -1,38 +1,86 @@
-.App {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* Açık arka plan rengi */
+}
+
+.parallax-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 3rem;
+}
+
+.features-section {
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 2rem;
+  color: #3a3a3a; /* Başlık rengi */
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.feature-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.feature-card {
+  background-color: #ffffff; /* Kart arka plan rengi */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-image {
+  margin-bottom: 10px;
+}
+
+.feature-details {
+  margin-top: 10px;
+  color: #56638A; /* Detay metin rengi */
+}
+
+.team-section {
+  margin-top: 40px;
+}
+
+.team-section h2 {
+  margin-bottom: 20px;
+}
+
+.team-section .feature-card {
+  width: 180px; /* Takım üyeleri için daha dar kartlar */
+}
+
+.team-section h3 {
+  color: #3a3a3a; /* Takım üyeleri başlık rengi */
+}
+
+.team-section p {
+  color: #707070; /* Takım üyeleri metin rengi */
+}
+
+
+.feature-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card.active {
+  transform: scale(1.05);
 }

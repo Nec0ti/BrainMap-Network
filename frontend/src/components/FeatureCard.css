@@ -1,0 +1,28 @@
+/* src/components/FeatureCard.css */
+.feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-details {
+    margin-top: 15px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 10px;
+}
+
+.interactive-example {
+    margin-top: 10px;
+    background: #eaeaea;
+    padding: 10px;
+    border-radius: 8px;
+}

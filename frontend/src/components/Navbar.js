@@ -1,21 +1,15 @@
 // src/components/Navbar.js
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isSwayed, setIsSwayed] = useState(false);
 
     const handleScroll = () => {
         const scrollTop = window.scrollY;
-        if (scrollTop > 50 && !isScrolled) {
-            setIsScrolled(true);
-            setIsSwayed(true);
-            setTimeout(() => setIsSwayed(false), 500); // Sarsılma efektinin süresi
-        } else if (scrollTop <= 50) {
-            setIsScrolled(false);
-        }
+        setIsScrolled(scrollTop > 50);
     };
 
     useEffect(() => {
@@ -24,13 +18,13 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isSwayed ? 'sway' : ''}`}>
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <h1>BrainMap Network</h1>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blogs">Blogs</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/signup">Register</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/blogs">Blogs</Link></li>
             </ul>
         </nav>
     );
